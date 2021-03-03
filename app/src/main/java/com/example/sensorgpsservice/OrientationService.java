@@ -145,7 +145,7 @@ public class OrientationService extends Service implements SensorEventListener {
             roll = 0;
         }
 
-        Log.d("Orientation",azimuth +" "+pitch+" "+roll);
+        //Log.d("Orientation",azimuth +" "+pitch+" "+roll);
 
 
     }

@@ -26,11 +26,13 @@ public class MagneticfieldService  extends Service implements SensorEventListene
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        mSensorMagnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-
+        mSensorManager = (SensorManager) getSystemService(
+                Context.SENSOR_SERVICE);
+        mSensorMagnetometer = mSensorManager.getDefaultSensor(
+                Sensor.TYPE_MAGNETIC_FIELD);
+        if (mSensorMagnetometer != null) {
             mSensorManager.registerListener(this, mSensorMagnetometer, 600000000,600000000);
-
+        }
         return Service.START_STICKY;
     }
 

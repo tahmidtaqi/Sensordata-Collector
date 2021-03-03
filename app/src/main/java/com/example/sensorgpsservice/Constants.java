@@ -33,15 +33,7 @@ class Constants {
 
     static String battery_level="";
 
-    static long gpsSetInterval = 0000000000;
-    static long gpsSetFastestInterval = 0000000000;
 
-    static long sqliteHandler = 10;
-    static long firebaseHandler = 120;
-
-
-
-
-    //static final String ACTION_START_ACCELEROMETER_SERVICE = "onStartCommand";
+   //static final String ACTION_START_ACCELEROMETER_SERVICE = "onStartCommand";
 
 }
