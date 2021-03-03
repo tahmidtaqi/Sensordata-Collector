@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "841407973883",
+    "project_id": "collectsensordata",
+    "storage_bucket": "collectsensordata.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841407973883:android:4e76a69da02de0f455635e",
+        "android_client_info": {
+          "package_name": "com.example.sensorgpsservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841407973883-f0ae6p2q7afqgr6lqp3b6g5avfnllb3p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sensorgpsservice",
+            "certificate_hash": "d64e3e8b5cc072cf6e9c68dfb56a9de44cafe3ae"
+          }
+        },
+        {
+          "client_id": "841407973883-3qevr3c9dpbldlqcl78495jdj873mgqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_3HpuWQzQ7oZnYb58LBcKx7p6hgtFW0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841407973883-3qevr3c9dpbldlqcl78495jdj873mgqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
