@@ -92,14 +92,14 @@ public class MainActivity2 extends AppCompatActivity {
 
                 dataBaseHelpersensor.addsensordata();
                 Toast.makeText(MainActivity2.this, "Executing from Runner and Data inserted", Toast.LENGTH_SHORT).show();
-                handler1.postDelayed(this,sqliteHandler);
+                handler1.postDelayed(this,Constants.sqliteHandler);
 
 
 
 
             }
         };
-        handler1.postDelayed(runnable1,sqliteHandler);
+        handler1.postDelayed(runnable1,Constants.sqliteHandler);
 
         //firebase handler to insert data intto firebase from sqlite after particular time period
         runnable2 = new Runnable() {
@@ -112,14 +112,14 @@ public class MainActivity2 extends AppCompatActivity {
 
                 Toast.makeText(MainActivity2.this, "Executing from Runner and Data inserted to Firebase", Toast.LENGTH_SHORT).show();
 
-                handler2.postDelayed(this,firebaseHandler);
+                handler2.postDelayed(this,Constants.firebaseHandler);
 
 
 
 
             }
         };
-        handler2.postDelayed(runnable2,firebaseHandler);
+        handler2.postDelayed(runnable2,Constants.firebaseHandler);
     }
     TextView text;
     ImageView image;
@@ -131,6 +131,7 @@ public class MainActivity2 extends AppCompatActivity {
         //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
        // FloatingActionButton fab = findViewById(R.id.fab);
    /*     fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -314,16 +315,23 @@ public class MainActivity2 extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                int firebaseHandler,sqliteHandler;
+                int firebaseHandler,sqliteHandler,gpsSetInterval,gpsSetFastestInterval;
 
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 //String value = dataSnapshot.getValue(String.class);
                 firebaseHandler= Integer.parseInt((dataSnapshot.child("firebaseHandler").getValue().toString()));
                 sqliteHandler= Integer.parseInt((dataSnapshot.child("sqliteHandler").getValue().toString()));
+                gpsSetInterval= Integer.parseInt((dataSnapshot.child("gpsSetInterval").getValue().toString()));
+                gpsSetFastestInterval= Integer.parseInt((dataSnapshot.child("gpsSetFastestInterval").getValue().toString()));
 
+                Constants.gpsSetInterval=gpsSetInterval;
+                Constants.gpsSetFastestInterval=gpsSetFastestInterval;
+                     Constants.firebaseHandler=firebaseHandler;
+                Constants.sqliteHandler = sqliteHandler;
                 init(firebaseHandler,sqliteHandler);
-                Log.d("ZZZZ", "Value is: " +firebaseHandler );
+                Log.d("ZZZZ", "Value is: " +Constants.firebaseHandler );
+                Log.d("ZZZZ2", "Value is: " +Constants.sqliteHandler );
 
             }
 

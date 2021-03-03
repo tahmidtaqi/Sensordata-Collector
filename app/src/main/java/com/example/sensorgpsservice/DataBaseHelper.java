@@ -78,6 +78,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
 
+
+
        String createTableSensor="CREATE TABLE " + SENSORDATA + " (" + SENSORGPS_LATITUDE + " REAL , "
                + SENSORGPS_LONGITUDE + " REAL," + ACCELEROMETER_X + " REAL," + ACCELEROMETER_Y + " REAL ,"
                + ACCELEROMETER_Z + " REAL," + ORIENTATION_AZIMUTH + " REAL," + ORIENTATION_PITCH + " REAL,"
@@ -90,6 +92,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //Log.d("DATABASE",createTableSensor);
 
         db.execSQL(createTableSensor);
+
 
 
 
