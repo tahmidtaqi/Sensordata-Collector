@@ -131,7 +131,7 @@ public class MainActivity2 extends AppCompatActivity {
         //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
 
 
        // FloatingActionButton fab = findViewById(R.id.fab);
