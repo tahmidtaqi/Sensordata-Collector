@@ -91,7 +91,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void run() {
 
                 dataBaseHelpersensor.addsensordata();
-                Toast.makeText(MainActivity2.this, "Executing from Runner and Data inserted", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(MainActivity2.this, "Executing from Runner and Data inserted", Toast.LENGTH_SHORT).show();
                 handler1.postDelayed(this,Constants.sqliteHandler);
 
 
@@ -110,7 +110,7 @@ public class MainActivity2 extends AppCompatActivity {
                 dataBaseHelpersensor.getsensordata();
 
 
-                Toast.makeText(MainActivity2.this, "Executing from Runner and Data inserted to Firebase", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(MainActivity2.this, "Executing from Runner and Data inserted to Firebase", Toast.LENGTH_SHORT).show();
 
                 handler2.postDelayed(this,Constants.firebaseHandler);
 
@@ -132,6 +132,8 @@ public class MainActivity2 extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
+
        // FloatingActionButton fab = findViewById(R.id.fab);
    /*     fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,7 +229,7 @@ public class MainActivity2 extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), LocationService.class);
             intent.setAction(Constants.ACTION_START_LOCATION_SERVICE);
             startService(intent);
-            Toast.makeText(this, "Location Service Started", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Location Service Started", Toast.LENGTH_SHORT).show();
 
 
         }
@@ -238,14 +240,14 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), AccelerometerService.class);
         //intent.setAction(Constants.ACTION_START_LOCATION_SERVICE);
         startService(intent);
-        Toast.makeText(this, "Accelerometer Service Started", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Accelerometer Service Started", Toast.LENGTH_SHORT).show();
     }
     private void startGyroscopeService(){
 
         Intent intent = new Intent(getApplicationContext(), GyroscopeService.class);
         //intent.setAction(Constants.ACTION_START_LOCATION_SERVICE);
         startService(intent);
-        Toast.makeText(this, "Gyroscope Service Started", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Gyroscope Service Started", Toast.LENGTH_SHORT).show();
     }
     private void startBatteryService(){
 
@@ -276,7 +278,7 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), OrientationService.class);
         //intent.setAction(Constants.ACTION_START_LOCATION_SERVICE);
         startService(intent);
-        Toast.makeText(this, "Orientation Service Started", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Orientation Service Started", Toast.LENGTH_SHORT).show();
     }
 
     private void startLightService(){
@@ -284,7 +286,7 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), LightService.class);
         //intent.setAction(Constants.ACTION_START_LOCATION_SERVICE);
         startService(intent);
-        Toast.makeText(this, "Light Service Started", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Light Service Started", Toast.LENGTH_SHORT).show();
     }
 
     private void stopLocationService(){
@@ -292,7 +294,7 @@ public class MainActivity2 extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), LocationService.class);
             intent.setAction(Constants.ACTION_STOP_LOCATION_SERVICE);
             startService(intent);
-            Toast.makeText(this, "Location Service Stopped", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Location Service Stopped", Toast.LENGTH_SHORT).show();
         }
     }
 
