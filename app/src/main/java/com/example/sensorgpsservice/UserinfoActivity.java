@@ -37,7 +37,6 @@ public class UserinfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         String uid=FirebaseAuth.getInstance().getCurrentUser().getUid();
         Log.d("UID ",uid);
         databaseReference= FirebaseDatabase.getInstance().getReference("SENSORDATA/USERS/" +uid+ "/USERINFO");
@@ -49,6 +48,16 @@ public class UserinfoActivity extends AppCompatActivity {
                 submitdata();
             }
         });
+    }
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(UserinfoActivity.this, LoginActivity.class));
+        finish();
+
+
     }
 
     //fetching the userinfo and submitting it to firebase

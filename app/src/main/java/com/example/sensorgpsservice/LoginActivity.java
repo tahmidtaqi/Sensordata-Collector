@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
         signInButton = findViewById(R.id.sign_in_button);
-        
         mAuth = FirebaseAuth.getInstance();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -114,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                       //and going to the next page
                         Intent intent =new Intent(LoginActivity.this,UserinfoActivity.class);
                         startActivity(intent);
+                        finish();
                         //updateUI(user);
                     } else {
                         Toast.makeText(LoginActivity.this, "Failed", Toast.LENGTH_SHORT).show();
@@ -156,6 +156,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.d("USERID",uid);
             Intent intent =new Intent(LoginActivity.this,MainActivity2.class);
             startActivity(intent);
+            finish();
         }
 
             //String uid=FirebaseAuth.getInstance().getCurrentUser().getUid();

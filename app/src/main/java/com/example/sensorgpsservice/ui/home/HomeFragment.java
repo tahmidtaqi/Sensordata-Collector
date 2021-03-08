@@ -18,6 +18,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.sensorgpsservice.R;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
@@ -36,9 +39,9 @@ public class HomeFragment extends Fragment {
                // textView.setText(s);
             }
         });
-        thankyoutext=root.findViewById(R.id.thankyou);
-        StringBuilder stringBuilder =new StringBuilder();
-        stringBuilder.append("Thank You");
+       // thankyoutext=root.findViewById(R.id.thankyou);
+       // StringBuilder stringBuilder =new StringBuilder();
+       // stringBuilder.append("Thank You");
 
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
@@ -51,8 +54,13 @@ public class HomeFragment extends Fragment {
                         // switch to fragment 1
 
                         {
-                            thankyoutext.setText(stringBuilder);
-                            Log.d("Radio1","selected");
+                            //thankyoutext.setText(stringBuilder);
+                            //Log.d("Radio1","selected");
+                            new SweetAlertDialog(
+                                    getContext(), SweetAlertDialog.SUCCESS_TYPE)
+                                    .setTitleText("Thank You!")
+                                    .setContentText("")
+                                    .show();
                             break;
 
                         }
@@ -60,8 +68,13 @@ public class HomeFragment extends Fragment {
                     case R.id.option2:
                         // Fragment 2
                         {
-                            thankyoutext.setText(stringBuilder);
-                            Log.d("Radio1","selected");
+                            //thankyoutext.setText(stringBuilder);
+                            //Log.d("Radio1","selected");
+                            new SweetAlertDialog(
+                                    getContext(), SweetAlertDialog.SUCCESS_TYPE)
+                                    .setTitleText("Thank You!")
+                                    .setContentText("")
+                                    .show();
                             break;
                         }
                 }
